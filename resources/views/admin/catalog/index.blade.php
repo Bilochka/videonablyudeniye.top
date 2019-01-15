@@ -1,6 +1,7 @@
 
 @extends('layouts.admin')
 
+
 @section('logout')
 
     @include('admin.logout')
