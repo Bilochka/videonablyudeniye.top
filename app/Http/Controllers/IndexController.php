@@ -12,27 +12,23 @@ class IndexController extends Controller
 {
 
     //
-    public function execute(Request $request)
+    public function index(Request $request)
     {
 
         if($request->isMethod('post')){
-//        if($request){
             $messages=[
-                'reguired' => "Поле :attribute обов'язкове для заповнення",
-                'max' => "Максимальна довжина поля :attribute :max символів",
+                'required' => "Поле \"телефон\" обов'язкове для заповнення",
+                'max' => "Максимальна довжина поля \"Текст повідомлення\" :max символів",
             ];
 
 
             $this->validate($request,[
-//                'internal_camcorder' => 'null||integer',
-//                'external_camcorder' => 'integer',
                 'phone' => 'required|max:13',
-                'message' => 'max:255'
+                'message' => 'max:3000'
             ], $messages);
 
             $data=$request->all();
             $data['email'] = 'someone@example.com' ;
-//            dump($data);
 
             $result= Mail::send('site.email', ['data'=>$data], function ($message) use ($data){
                 $mail_admin = env('MAIL_ADMIN');
@@ -41,17 +37,19 @@ class IndexController extends Controller
                 $message->to($mail_admin, 'Пане Андрійко')->subject('Question');
             });
 
+//
+//            if (empty($result->phone)){
+//                \Flash::error('Повідомлення не відправленно, вкажіть номер телефону!');
+//            }
+//            else{
+//                if($result){
+////                    return redirect()->route('home2')->with('status', 'Повідомлення надіслано, очікуйте на відповідь!');
+//                    return redirect()->route('home')->with('status', 'Повідомлення надіслано, очікуйте на відповідь!');
+//                }
+//            }
 
-            if (empty($result->phone)){
-                return alert('Message is not send');
-            }
-            else{
-                if($result){
-                    return redirect()->route('home2')->with('status', 'Message is send');
-                }
-            }
+            return redirect()->route('home')->with('flash_message', 'Повідомлення надіслано, очікуйте на відповідь!');
 
-//            dump($request);
         }
 
 

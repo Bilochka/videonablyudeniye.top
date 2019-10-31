@@ -24,7 +24,7 @@
 
 //Route::group(['middleware'=>'web'], function (){
 Route::group([], function (){
-    Route::match(['get','post'],'/',['uses'=>'IndexController@execute','as'=>'home']);
+    Route::match(['get','post'],'/',['uses'=>'IndexController@index','as'=>'home']);
     Route::auth();
 });
 
@@ -75,4 +75,4 @@ Route::group(['prefix'=>'admin', 'middleware'=>'auth'], function (){
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home2');
+Route::post('/home', 'HomeController@execute')->name('home2');

@@ -8,7 +8,7 @@ Do not remove the back-link in this web template
 @charset "utf-8";
 @import url(http://fonts.googleapis.com/css?family=Raleway:800,700,400);
 @import url(http://fonts.googleapis.com/css?family=Signika:400,600);
-
+@import "font-awesome/css/font-awesome.css";
 /* Reset
 ---------------------------------*/
 ul {
@@ -220,21 +220,31 @@ p {
 }
 
 .list_works{
-    color:   #3e4d55;
+    color:   #ece7ca;
     font-size: large;
+}
+
+.list_works:hover, .list_works:focus {
+    color:   #ece7ca;
+    text-decoration: none;
+
 }
 .list_works_li{
     margin-top: 10px;
     margin-bottom: 10px;
-
 }
+
 .tack{
     color:   aliceblue;
     margin-right: 30px;
 }
 
 .top_cont_outer {
-    background: #1EBAFE;
+    /*background: #1EBAFE;*/
+    background-image: url(../img/bg/bg22.jpg);
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
     position: relative;
 }
 
@@ -369,7 +379,7 @@ button.read_more2:hover {
 .advantage_icon i {
     color: #df0031;
     font-size: 40px;
-    margin-top: 0;
+    margin-top: 4px;
     position: relative;
     top: 20px;
     z-index: 20;
@@ -379,8 +389,10 @@ button.read_more2:hover {
     font-family: 'Raleway', sans-serif;
     font-weight: 600;
     font-size: 18px;
-    color: #111111;
+    color: #888888;
     margin: 35px 0 18px;
+
+    line-height: 24px;
 }
 
 .advantage_block p {
@@ -409,7 +421,11 @@ button.read_more2:hover {
 }
 
 .inner_section {
-    padding: 60px 0 20px;
+    padding: 0 0 20px;
+}
+
+.about-img {
+
 }
 
 .service-list {
@@ -455,7 +471,7 @@ a.contact_btn {
     background: #fff;
     text-transform: uppercase;
     display: block;
-    width: 176px;
+    width: 230px;
     height: 49px;
     text-align: center;
     line-height: 49px;
@@ -468,6 +484,7 @@ a.contact_btn {
     transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
     -webkit-transition: all 0.2s ease-in-out;
+    text-decoration: none;
 }
 
 a.contact_btn:hover {
@@ -791,6 +808,11 @@ img {
     padding: 60px 0;
 }
 
+.title-ab_us {
+    line-height: 26px;
+}
+
+
 /* Contact
 ---------------------------------*/
 .page_section.contact {
@@ -896,20 +918,20 @@ img {
     margin: 0 0 30px;
 }
 
-.social_links {
+.contacts-btn {
     padding:0;
-    margin: 0;
+    margin: 0 0 30px 20px;
     display: block;
     overflow: hidden;
     list-style: none;
 }
 
-.social_links li {
+.contacts-btn li {
     float: left;
     margin-right: 4px;
 }
 
-.social_links li a {
+.contacts-btn li a {
     display: block;
     width: 50px;
     height: 50px;
@@ -919,7 +941,7 @@ img {
     color: #fff;
 }
 
-.social_links li a:hover, .social_links li a:focus {
+.contacts-btn li a:hover, .contacts-btn li a:focus {
     text-decoration: none;
     border-radius: 80px;
 }
@@ -942,7 +964,7 @@ img {
  
 
 .form {
-    margin: 0 66px 0 30px;
+    margin: 0 0 0 30px;
 }
 
 .input-text {
@@ -1755,7 +1777,7 @@ margin: 0 25px;
 padding: 11px 0;
 display: inline-block;
 }
-.social_links li {
+.contacts-btn li {
 float: left; 
 }
 .contact_section{
